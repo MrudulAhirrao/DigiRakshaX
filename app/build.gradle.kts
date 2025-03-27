@@ -16,7 +16,7 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField ("String", "SENDGRID_API_KEY", "\"${System.getenv("SENDGRID_API_KEY")}\"")
+        buildConfigField("String", "SENDGRID_API_KEY", "\"${project.findProperty("SENDGRID_API_KEY")}\"")
 
     }
 

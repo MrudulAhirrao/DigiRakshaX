@@ -26,6 +26,7 @@ import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import com.example.mfa.BuildConfig
 import com.example.mfa.MainActivity
 import com.example.mfa.R
 import com.example.mfa.services.SupabaseService
@@ -249,7 +250,7 @@ class CameraActivity : AppCompatActivity() {
     suspend fun sendSuspiciousActivityEmail(userEmail: String) {
         withContext(Dispatchers.IO) { // Ensure execution in background thread
             try {
-                val apiKey = "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"
+                val apiKey = BuildConfig.SENDGRID_API_KEY
                 Log.d("SendGrid", "API Key: $apiKey")
                 val url = "https://api.sendgrid.com/v3/mail/send"
 
